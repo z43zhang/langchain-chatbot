@@ -2,7 +2,7 @@
 
 ![App Preview](https://github.com/z43zhang/langchain-chatbot/blob/main/assets/main1.png)
 
-### A RAG-Powered chatbot that answers questions about [LangChain's official documentation](https://python.langchain.com/). 
+### A multi-turn RAG chatbot over [LangChain documentation](https://python.langchain.com/), built with GPT-4o, Pinecone, and LangChain’s modular chain framework. 
 
 ---
 
@@ -34,7 +34,7 @@
 | UUID Hashing     | `uuid`, `hashlib`                                      |
 | Prompt Templates | LangChain Hub                                          |
 | Chat Memory      | `st.session.state`                                     |
-| UI               | Streamlit                                              |
+| UI & Deployment  | Streamlit Cloud                                        |
 
 ---
 
