@@ -1,8 +1,8 @@
-# 🌐 **Live Demo**: [Click here to try it out](https://zhang-langchain-chatbot.streamlit.app/)
+# 🌐 **Live Demo**: [Click here to try it out](https://zhang-chatbot.streamlit.app/)
 
-![App Preview]()
+![App Preview](https://github.com/z43zhang/langchain-chatbot/blob/main/assets/main1.png)
 
-### 📒 An interactive Retrieval-Augmented Generation (RAG) chatbot that answers questions about [LangChain's official documentation](https://python.langchain.com/). Powered by **OpenAI GPT-4o**, **Pinecone**, and **LangChain**, with a **Streamlit** UI for live chat experience.
+### 📒 A RAG-Powered chatbot that answers questions about [LangChain's official documentation](https://python.langchain.com/). 
 
 ---
 
@@ -21,21 +21,24 @@
 
 # 🛠️ Tech Stack
 
-| Layer            | Tools / Libraries                                     |
+| Layer            | Tools / Libraries                                      |
 |------------------|--------------------------------------------------------|
-| UI               | Streamlit                                              |
+| RAG Framework    | LangChain (Retriever, Chains, Prompt Hub)              |
 | LLM              | OpenAI `gpt-4o-mini`                                   |
 | Embeddings       | OpenAI `text-embedding-3-small`                        |
 | Vector Store     | Pinecone                                               |
-| RAG Framework    | LangChain (Retriever, Chains, Prompt Hub)              |
 | Web Crawling     | Firecrawl API                                          |
-| Chunking         | `RecursiveCharacterTextSplitter`                      |
+| Chunking         | `RecursiveCharacterTextSplitter`                       |
+| UUID Hashing     | `uuid`, `hashlib`                                      |
+| Prompt Templates | LangChain Hub                                          |
+| Chat Memory      | `st.session.state`                                     |
+| UI               | Streamlit                                              |
 
 ---
 
 # 🧪 Project Breakdown
 
-This section breaks down the project **based strictly on the sequence and logic flow from the three Python files**: `ingestion.py`, `core.py`, and `main.py`. It follows the full life cycle: data ingestion → RAG pipeline → UI deployment.
+This section follows the full life cycle: data ingestion → RAG pipeline → UI deployment.
 
 ## 1. 📥 Ingest Documentation 
 
