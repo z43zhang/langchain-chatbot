@@ -23,6 +23,7 @@ langsmith = "*"
 pinecone = "*"
 pillow = "*"
 firecrawl-py = "*"
+langchain-openai = "*"
 
 [dev-packages]
 
