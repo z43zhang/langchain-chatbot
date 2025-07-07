@@ -2,7 +2,7 @@
 
 ![App Preview](https://github.com/z43zhang/langchain-chatbot/blob/main/assets/main1.png)
 
-### 📒 A RAG-Powered chatbot that answers questions about [LangChain's official documentation](https://python.langchain.com/). 
+### A RAG-Powered chatbot that answers questions about [LangChain's official documentation](https://python.langchain.com/). 
 
 ---
 
