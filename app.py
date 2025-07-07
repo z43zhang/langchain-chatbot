@@ -8,7 +8,7 @@ import pytz
 EST = pytz.timezone("America/New_York")
 
 # ------------------ Page Setup ------------------
-st.set_page_config(page_title="LangChain Chatbot", page_icon="🧠")
+st.set_page_config(page_title="LangChain Chatbot", page_icon="🤖")
 
 st.markdown("<h1 style='text-align: center;'>🤖 RAG-Powered Chatbot for LangChain Documentation</h1>", unsafe_allow_html=True)
 st.markdown("<p style='text-align: right;'>Developed by Zhonghao Zhang</p>", unsafe_allow_html=True)
