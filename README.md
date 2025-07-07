@@ -36,7 +36,7 @@
 
 ---
 
-# 🧪 Project Breakdown
+# 🔬 Project Breakdown
 
 This section follows the full life cycle: data ingestion → RAG pipeline → UI deployment.
 
@@ -109,7 +109,33 @@ This is the front-end entry point that drives user interaction.
 
 ---
 
+# 🧪 Examples
 
+## Example 1: Single-Turn Query
+
+### A direct question about LangChain’s integrations with a clear, grounded answer.
+![App Preview](https://github.com/z43zhang/langchain-chatbot/blob/main/assets/main2.png)
+
+### The view of the RAG pipeline execution for the question _“What is a document loader?”_. 
+### It shows how context is retrieved, formatted, and passed to GPT-4o-mini, along with the grounded response generated.
+![App Preview](https://github.com/z43zhang/langchain-chatbot/blob/main/assets/rag.png)
+
+
+## Example 2: Multi-Turn Follow-Up
+
+A follow-up question relying on previous context, demonstrating the chatbot's memory function.
+![App Preview](https://github.com/z43zhang/langchain-chatbot/blob/main/assets/history1.png)
+
+### The chatbot reformulates a follow-up question using chat history, powered by LangChain's `HistoryAwareRetriever`.  
+### This screenshot shows how the query "Give me an example" is rewritten into "Can you provide an example of a document loader?"  
+### It demonstrates that the system understands conversation flow, not just isolated queries.
+![App Preview](https://github.com/z43zhang/langchain-chatbot/blob/main/assets/rewriting.png)
+
+
+## Example 3: Source Verification
+
+The original documentation chunk retrieved and used to generate the answer, verifying output traceability.
+![App Preview](https://github.com/z43zhang/langchain-chatbot/blob/main/assets/source.png)
 
 
 
