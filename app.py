@@ -1,13 +1,13 @@
 from typing import Set
 from datetime import datetime
-from backend.core import run_llm
+from backend.rag_pipeline import run_llm
 import streamlit as st
 import io
 
 # ------------------ Page Setup ------------------
 st.set_page_config(page_title="LangChain Chatbot", page_icon="🧠")
 
-st.markdown("<h1 style='text-align: center;'>LangChain Assistant 🤖</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center;'>RAG-Powered Chatbot for LangChain Documentation 🤖</h1>", unsafe_allow_html=True)
 st.markdown("<p style='text-align: right;'>Developed by Zhonghao Zhang</p>", unsafe_allow_html=True)
 
 # ------------------ Session State Initialization ------------------
@@ -113,11 +113,10 @@ if st.session_state["chat_answers_history"]:  # Only show if chat has started
         buffer = io.BytesIO(history_text.encode("utf-8"))
 
         st.download_button(
-            label="🖨️ Download Chat",
+            label="🖨️ Download",
             data=buffer,
             file_name="chat_history.txt",
             mime="text/plain",
             key="download_btn"
         )
-
 
