@@ -3,6 +3,9 @@ from datetime import datetime
 from backend.rag_pipeline import run_llm
 import streamlit as st
 import io
+import pytz
+
+EST = pytz.timezone("America/New_York")
 
 # ------------------ Page Setup ------------------
 st.set_page_config(page_title="LangChain Chatbot", page_icon="🧠")
@@ -58,7 +61,8 @@ prompt = st.chat_input("Ask anything about LangChain")
 
 if prompt:
     with st.spinner("Generating response..."):
-        user_time = datetime.now()
+
+        user_time = datetime.now(EST)
 
         # Run the full RAG pipeline
         generated_response = run_llm(
@@ -66,7 +70,7 @@ if prompt:
             chat_history=st.session_state["chat_history"]
         )
 
-        assistant_time = datetime.now()
+        assistant_time = datetime.now(EST)
 
         # Extract and format source URLs
         sources = {doc.metadata["source"] for doc in generated_response["source_documents"]}
