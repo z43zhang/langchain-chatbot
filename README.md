@@ -9,13 +9,14 @@
 # 🚀 Features
 
 * 🔍 **LangChain RAG Pipeline** — Built a Retrieval-Augmented Generation system using `HistoryAwareRetriever`, `StuffDocumentsChain`, and `RetrievalChain` from LangChain
-* 🗂️ **Custom Document Ingestion** — Scraped LangChain doc pages using Firecrawl API, converted to Markdown/HTML, and chunked via `RecursiveCharacterTextSplitter`
-* 🧠 **Semantic Search Index** — Embedded 2,383 text chunks with OpenAI’s `text-embedding-3-small` (1536-dim) and stored in a Pinecone index using cosine similarity
-* 🧬 **Deterministic Chunk IDs** — Prevented duplicate uploads using UUIDv5 generated from MD5 hashes of content
 * 🔄 **Multi-Turn Query Handling** — Rephrased follow-up questions using chat context via `chat-langchain-rephrase` prompt and `HistoryAwareRetriever`
+* 🧠 **Semantic Search Index** — Embedded 2,383 text chunks with OpenAI’s `text-embedding-3-small` (1536-dim) and stored in a Pinecone index using cosine similarity
+* 🗂️ **Custom Document Ingestion** — Scraped LangChain doc pages using Firecrawl API, converted to Markdown/HTML, and chunked via `RecursiveCharacterTextSplitter`
+* 📈 **LangSmith Monitoring** — Traces all RAG pipeline executions with full visibility into retriever, prompt, and LLM steps
+* 🔗 **Source Attribution** — Each response cites original documentation URLs used during retrieval for full transparency
+* 🧬 **Deterministic Chunk IDs** — Prevented duplicate uploads using UUIDv5 generated from MD5 hashes of content
 * 🤖 **Grounded Generation** — Used GPT-4o-mini to answer questions strictly based on retrieved document chunks using `retrieval-qa-chat` prompt
 * 🖥️ **Interactive Chat App** — Streamlit-based UI with avatars, timestamps, real-time responses, reset functionality, and chat history download
-* 🔗 **Source Attribution** — Each response cites original documentation URLs used during retrieval for full transparency
 
 ---
 
@@ -27,6 +28,7 @@
 | LLM              | OpenAI `gpt-4o-mini`                                   |
 | Embeddings       | OpenAI `text-embedding-3-small`                        |
 | Vector Store     | Pinecone                                               |
+| Monitoring       | LangSmith (tracing, latency, token logging)            |
 | Web Crawling     | Firecrawl API                                          |
 | Chunking         | `RecursiveCharacterTextSplitter`                       |
 | UUID Hashing     | `uuid`, `hashlib`                                      |
