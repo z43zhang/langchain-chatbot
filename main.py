@@ -8,6 +8,7 @@ st.set_page_config(page_title="LangChain Chatbot", page_icon="🧠")
 
 # Centered title header
 st.markdown("<h1 style='text-align: center;'>LangChain Assistant 🤖</h1>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: right;'>Developed by Zhonghao Zhang</p>", unsafe_allow_html=True)
 
 # Custom Avatars
 USER_AVATAR = "🧑‍💻"
