@@ -31,7 +31,7 @@ def run_llm(query: str, chat_history: List[Dict[str, Any]] = []):
     # Load prompts for RAG answering
     retrieval_qa_chat_prompt = hub.pull("langchain-ai/retrieval-qa-chat") # "Answer any user questions based solely on the context below:"
 
-    # todo 1 Chat + Rephrase Prompts + docsearch
+    # 1.Chat + Rephrase Prompts + docsearch
     # Wrap retriever with logic to turn chat history + follow-up query into standalone query
     history_aware_retriever = create_history_aware_retriever(
         llm=chat,
@@ -39,12 +39,12 @@ def run_llm(query: str, chat_history: List[Dict[str, Any]] = []):
         retriever=docsearch.as_retriever()
     )
 
-    # todo 2 Stuff Docs + Prompt
+    # 2.Stuff Docs + Prompt
     # Create chain to format retrieved docs + user query into a prompt and send to LLM
     stuff_documents_chain = create_stuff_documents_chain(chat,
                                                          retrieval_qa_chat_prompt)
 
-    # todo 3 Combine 2 chains
+    # 3.Combine 2 chains
     # Full RAG chain: uses history-aware retriever and document combination logic
     qa = create_retrieval_chain(
         retriever=history_aware_retriever,
