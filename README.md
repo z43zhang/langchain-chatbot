@@ -112,36 +112,38 @@ This is the front-end entry point that drives user interaction.
 
 # 🧪 Examples
 
+These examples demonstrate how the chatbot handles single-turn queries, multi-turn conversation flow, and provides transparent source attribution — with supporting LangSmith visualizations.
+
 ## Example 1: 📌 Single-Turn Query
 
-Shows a direct response to a single-turn question about LangChain components.
+A question about a LangChain component.
 ![App Preview](https://github.com/z43zhang/langchain-chatbot/blob/main/assets/main2.png)
 
 ### ⚙️ Under The Hood
-The LangSmith view of the RAG pipeline for the question _“What is a document loader?”_. 
+
+LangSmith trace for the question _“What is a document loader?”_. 
 
 ![App Preview](https://github.com/z43zhang/langchain-chatbot/blob/main/assets/rag.png)
 
-It shows how context is retrieved, formatted, and passed to GPT-4o-mini, along with the grounded response generated.
+This shows how relevant context is retrieved, formatted, and passed to `gpt-4o-mini`, resulting in a grounded response.
 
 ## Example 2: 📌 Follow-Up Understanding
 
-The chatbot correctly rewrites and handles vague follow-up questions using history.
+A vague follow-up is reinterpreted based on chat history.
 
 ![App Preview](https://github.com/z43zhang/langchain-chatbot/blob/main/assets/history1.png)
 
 ### ⚙️ Under The Hood
-The chatbot reformulates a follow-up question using chat history, powered by LangChain's `HistoryAwareRetriever`.  
+
+The chatbot rewrites the query "Give me an example" into _"Can you provide an example of a document loader?"_ using `HistoryAwareRetriever`.
 
 ![App Preview](https://github.com/z43zhang/langchain-chatbot/blob/main/assets/rewriting.png)
 
-This screenshot above shows how the query "Give me an example" is rewritten into "Can you provide an example of a document loader?"  
+This demonstrates that the system understands conversation flow, not just isolated prompts.
 
-It demonstrates that the system understands conversation flow, not just isolated queries.
+## Example 3: 📌 Source Traceability
 
-## Example 3: 📌Source Traceability
-
-Every response is traceable to the exact retrieved document chunk, shown here.
+Each answer includes links to retrieved document chunks used in generation.
 
 ![App Preview](https://github.com/z43zhang/langchain-chatbot/blob/main/assets/source.png)
 
