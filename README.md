@@ -2,7 +2,8 @@
 
 ![App Preview](https://github.com/z43zhang/langchain-chatbot/blob/main/assets/main1.png)
 
-### A multi-turn RAG chatbot over [LangChain documentation](https://python.langchain.com/), built with GPT-4o, Pinecone, and LangChain’s modular chain framework. 
+### > **TL;DR**: A multi-turn RAG chatbot over [LangChain documentation](https://python.langchain.com/), built with GPT-4o, Pinecone, and LangChain’s modular chain framework. 
+
 
 ---
 
@@ -24,16 +25,14 @@
 
 | Layer            | Tools / Libraries                                      |
 |------------------|--------------------------------------------------------|
-| RAG Framework    | LangChain (Retriever, Chains, Prompt Hub)              |
-| LLM              | OpenAI `gpt-4o-mini`                                   |
-| Embeddings       | OpenAI `text-embedding-3-small`                        |
-| Vector Store     | Pinecone                                               |
-| Monitoring       | LangSmith (tracing, latency, token logging)            |
-| Web Crawling     | Firecrawl API                                          |
+| RAG Framework    | LangChain (`Retriever`, `Chains`, `Prompt Hub`)        |
+| LLM + Embedding  | OpenAI `gpt-4o-mini`, `text-embedding-3-small`         |            
+| Vector DB        | Pinecone                                               |
+| Monitoring       | LangSmith                                              |
+| Web Scraper      | Firecrawl API                                          |
 | Chunking         | `RecursiveCharacterTextSplitter`                       |
 | UUID Hashing     | `uuid`, `hashlib`                                      |
 | Prompt Templates | LangChain Hub                                          |
-| Chat Memory      | `st.session.state`                                     |
 | UI & Deployment  | Streamlit Cloud                                        |
 
 ---
@@ -113,31 +112,52 @@ This is the front-end entry point that drives user interaction.
 
 # 🧪 Examples
 
-## Example 1: Single-Turn Query
+## Example 1: 📌 Single-Turn Query
 
-### A direct question about LangChain’s integrations with a clear, grounded answer.
+Shows a direct response to a single-turn question about LangChain components.
 ![App Preview](https://github.com/z43zhang/langchain-chatbot/blob/main/assets/main2.png)
 
-### The view of the RAG pipeline execution for the question _“What is a document loader?”_. 
-### It shows how context is retrieved, formatted, and passed to GPT-4o-mini, along with the grounded response generated.
+### ⚙️ Under The Hood
+The LangSmith view of the RAG pipeline for the question _“What is a document loader?”_. 
+
 ![App Preview](https://github.com/z43zhang/langchain-chatbot/blob/main/assets/rag.png)
 
+It shows how context is retrieved, formatted, and passed to GPT-4o-mini, along with the grounded response generated.
 
-## Example 2: Multi-Turn Follow-Up
+## Example 2: 📌 Follow-Up Understanding
 
-A follow-up question relying on previous context, demonstrating the chatbot's memory function.
+The chatbot correctly rewrites and handles vague follow-up questions using history.
+
 ![App Preview](https://github.com/z43zhang/langchain-chatbot/blob/main/assets/history1.png)
 
-### The chatbot reformulates a follow-up question using chat history, powered by LangChain's `HistoryAwareRetriever`.  
-### This screenshot shows how the query "Give me an example" is rewritten into "Can you provide an example of a document loader?"  
-### It demonstrates that the system understands conversation flow, not just isolated queries.
+### ⚙️ Under The Hood
+The chatbot reformulates a follow-up question using chat history, powered by LangChain's `HistoryAwareRetriever`.  
+
 ![App Preview](https://github.com/z43zhang/langchain-chatbot/blob/main/assets/rewriting.png)
 
+This screenshot above shows how the query "Give me an example" is rewritten into "Can you provide an example of a document loader?"  
 
-## Example 3: Source Verification
+It demonstrates that the system understands conversation flow, not just isolated queries.
 
-The original documentation chunk retrieved and used to generate the answer, verifying output traceability.
+## Example 3: 📌Source Traceability
+
+Every response is traceable to the exact retrieved document chunk, shown here.
+
 ![App Preview](https://github.com/z43zhang/langchain-chatbot/blob/main/assets/source.png)
 
+---
 
+# 🧑‍💻 Run Locally
 
+```bash
+git clone https://github.com/z43zhang/langchain-rag-chatbot.git
+cd langchain-rag-chatbot
+pipenv install 
+
+# Add your OpenAI key, Pinecone key, and Firecrawl key to a .env file
+
+# Ingest Documentation
+pipenv run python ingest_documents.py
+
+# Launch the App
+streamlit run app.py
