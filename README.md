@@ -9,15 +9,15 @@
 
 # 🚀 Features
 
-* 🔍 **LangChain RAG Pipeline** — Built a Retrieval-Augmented Generation system using `HistoryAwareRetriever`, `StuffDocumentsChain`, and `RetrievalChain` from LangChain
-* 🔄 **Multi-Turn Query Handling** — Rephrased follow-up questions using chat context via `chat-langchain-rephrase` prompt and `HistoryAwareRetriever`
-* 🧠 **Semantic Search Index** — Embedded 2,383 text chunks with OpenAI’s `text-embedding-3-small` (1536-dim) and stored in a Pinecone index using cosine similarity
-* 🗂️ **Custom Document Ingestion** — Scraped LangChain doc pages using Firecrawl API, converted to Markdown/HTML, and chunked via `RecursiveCharacterTextSplitter`
-* 📈 **LangSmith Monitoring** — Traces all RAG pipeline executions with full visibility into retriever, prompt, and LLM steps
-* 🔗 **Source Attribution** — Each response cites original documentation URLs used during retrieval for full transparency
-* 🧬 **Deterministic Chunk IDs** — Prevented duplicate uploads using UUIDv5 generated from MD5 hashes of content
-* 🤖 **Grounded Generation** — Used GPT-4o-mini to answer questions strictly based on retrieved document chunks using `retrieval-qa-chat` prompt
-* 🖥️ **Interactive Chat App** — Streamlit-based UI with avatars, timestamps, real-time responses, reset functionality, and chat history download
+* 🔍 **LangChain RAG Pipeline** — Uses `HistoryAwareRetriever`, `StuffDocumentsChain`, and `RetrievalChain` from LangChain
+* 🔄 **Multi-Turn Query Handling** — Rephrases follow-ups using chat context via `chat-langchain-rephrase` and `HistoryAwareRetriever`
+* 🧠 **Semantic Search Index** — Embeds 2,383 chunks with `text-embedding-3-small` (1536-dim) and stored in Pinecone
+* 🗂️ **Custom Document Ingestion** — Scrapes LangChain docs via Firecrawl API and chunked via `RecursiveCharacterTextSplitter`
+* 📈 **LangSmith Monitoring** — Logs retriever, prompt, and LLM steps with full RAG pipeline traces
+* 🔗 **Source Attribution** — Cites original documentation URLs used for each response
+* 🧬 **Deterministic Chunk IDs** — Prevents duplicate uploads using UUIDv5 + MD5 hashing of content
+* 🤖 **Grounded Generation** — Uses `GPT-4o-mini` to generate answers strictly from retrieved context via `retrieval-qa-chat`
+* 🖥️ **Interactive Chat App** — Streamlit UI with avatars, timestamps, real-time responses, reset, and download options
 
 ---
 
@@ -59,7 +59,7 @@ The ingestion pipeline scrapes and prepares LangChain docs for semantic search:
   - Dimensions: 1536
 - **Storage**: 
   - Vector store: `PineconeVectorStore`
-  - Record Count: `2383`
+  - Record Count: 2383
 
 > ✅ Output: A Pinecone index filled with chunked and deduplicated documentation vectors.
 
