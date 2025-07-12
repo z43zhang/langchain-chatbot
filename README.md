@@ -2,7 +2,7 @@
 
 ![App Preview](https://github.com/z43zhang/langchain-chatbot/blob/main/assets/main1.png)
 
-### > **TL;DR**: A multi-turn RAG chatbot over [LangChain documentation](https://python.langchain.com/), built with GPT-4o, Pinecone, and LangChain’s modular chain framework. 
+### A multi-turn RAG chatbot over [LangChain documentation](https://python.langchain.com/), built with GPT-4o, Pinecone, and LangChain’s modular chain framework. 
 
 
 ---
