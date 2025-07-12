@@ -10,8 +10,8 @@
 # 🚀 Features
 
 * 🔍 **LangChain RAG Pipeline** — Use `HistoryAwareRetriever`, `StuffDocumentsChain`, and `RetrievalChain`
-* 🔄 **Multi-Turn Query Handling** — Rephrase follow-ups using `chat-langchain-rephrase` and `HistoryAwareRetriever`
-* 🧠 **Semantic Search Index** — Embed 2,383 chunks with `text-embedding-3-small` (1536-dim) and store in Pinecone
+* 🔄 **Multi-Turn Query** — Rephrase follow-ups using `chat-langchain-rephrase` and `HistoryAwareRetriever`
+* 🧠 **Search Index** — Embed 2,383 chunks with `text-embedding-3-small` (1536-dim) and store in Pinecone
 * 🗂️ **Document Ingestion** — Scrape LangChain docs via Firecrawl and chunk via `RecursiveCharacterTextSplitter`
 * 📈 **LangSmith Monitoring** — Log retriever, prompt, and LLM steps with full RAG pipeline traces
 * 🔗 **Source Attribution** — Cite original documentation URLs used for each response
