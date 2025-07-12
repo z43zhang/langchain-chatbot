@@ -12,11 +12,11 @@
 * 🔍 **LangChain RAG Pipeline** — Use `HistoryAwareRetriever`, `StuffDocumentsChain`, and `RetrievalChain`
 * 🔄 **Multi-Turn Query Handling** — Rephrase follow-ups using `chat-langchain-rephrase` and `HistoryAwareRetriever`
 * 🧠 **Semantic Search Index** — Embed 2,383 chunks with `text-embedding-3-small` (1536-dim) and store in Pinecone
-* 🗂️ **Custom Document Ingestion** — Scrape LangChain docs via Firecrawl and chunk via `RecursiveCharacterTextSplitter`
+* 🗂️ **Document Ingestion** — Scrape LangChain docs via Firecrawl and chunk via `RecursiveCharacterTextSplitter`
 * 📈 **LangSmith Monitoring** — Log retriever, prompt, and LLM steps with full RAG pipeline traces
 * 🔗 **Source Attribution** — Cite original documentation URLs used for each response
 * 🧬 **Deterministic Chunk IDs** — Prevent duplicate uploads using UUIDv5 + MD5 hashing of content
-* 🤖 **Grounded Generation** — Use `GPT-4o-mini` to generate answers from retrieved context via `retrieval-qa-chat`
+* 🤖 **Grounded Generation** — Use `GPT-4o-mini` to generate answers from context via `retrieval-qa-chat`
 * 🖥️ **Interactive Chat App** — Streamlit UI with timestamps, real-time responses, reset, and download options
 
 ---
