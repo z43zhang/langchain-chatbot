@@ -41,7 +41,7 @@
 
 This section follows the full life cycle: data ingestion → RAG pipeline → UI deployment.
 
-## 1. 📥 Ingest Documentation 
+## 1. 📥 Document Ingestion
 
 The ingestion pipeline scrapes and prepares LangChain docs for semantic search:
 
